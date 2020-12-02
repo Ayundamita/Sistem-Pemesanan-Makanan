@@ -168,18 +168,6 @@ $sqlJOIN = mysqli_query($connect, $JOIN);
 						    while($dataJOIN = mysqli_fetch_array($sqlJOIN)) {
 					    	$idpembeli = $datapesanan['id_pembeli'];
 
-					  //   	$queryA = "SELECT * FROM pembeli WHERE id_pembeli = '$idpembeli'";
-							// $sqlA = mysqli_query($connect, $queryA);
-							// $datapembeli = mysqli_fetch_array($sqlA);
-
-					  //   	$idmenu = $datapesanan['id_menu'];
-
-							// $queryB = "SELECT * FROM menu WHERE id_menu = '$idmenu'";
-							// $sqlB = mysqli_query($connect, $queryB);
-							// $datamenu = mysqli_fetch_array($sqlB);
-
-							// $totalharga = $datapesanan['total_pesanan']*$datamenu['harga'];
-
 					        echo "<tr>";
 					        echo "<td>".$dataJOIN['nama_pembeli']."</td>";
 					        echo "<td>".$datamenu['nama']."</td>";
