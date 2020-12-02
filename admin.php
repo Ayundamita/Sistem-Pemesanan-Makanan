@@ -13,6 +13,8 @@ $sql = mysqli_query($connect, $query);
 
 $query2 = "SELECT * FROM pembayaran ORDER BY id_pembayaran";
 $sql2 = mysqli_query($connect, $query2);
+$JOIN = "SELECT b.nama_pembeli, c.nama FROM `pesanan` AS a INNER JOIN pembeli AS b ON a.id_pembeli = b.id_pembeli INNER JOIN menu AS c ON a.id_menu = c.id_menu";
+$sqlJOIN = mysqli_query($connect, $JOIN);
 ?>
 <!DOCTYPE html>
 <html>
@@ -148,6 +150,42 @@ $sql2 = mysqli_query($connect, $query2);
 						        echo "<td><a href='edit.php?idpembayaran=$datapembayaran[id_pembayaran]&idpenjual=$id'>Edit</a> || <a href='delete.php?idpembayaran=$datapembayaran[id_pembayaran]&idpenjual=$id'>Delete</a></td>";
 						        echo "</tr>";        
 						    }
+						    ?>
+						
+						    </table>
+					<h1 style="
+					font-size: 25px;
+					letter-spacing: 1px;
+					margin-top: 25px;
+					font-weight: bold;
+					text-align: center;
+				">Data JOIN</h1>
+						    <table width='100%' border="1">
+						    <tr>
+						        <th>Nama Pemesan</th> <th>Menu</th>
+						    </tr>
+						    <?php  
+						    while($dataJOIN = mysqli_fetch_array($sqlJOIN)) {
+					    	$idpembeli = $datapesanan['id_pembeli'];
+
+					  //   	$queryA = "SELECT * FROM pembeli WHERE id_pembeli = '$idpembeli'";
+							// $sqlA = mysqli_query($connect, $queryA);
+							// $datapembeli = mysqli_fetch_array($sqlA);
+
+					  //   	$idmenu = $datapesanan['id_menu'];
+
+							// $queryB = "SELECT * FROM menu WHERE id_menu = '$idmenu'";
+							// $sqlB = mysqli_query($connect, $queryB);
+							// $datamenu = mysqli_fetch_array($sqlB);
+
+							// $totalharga = $datapesanan['total_pesanan']*$datamenu['harga'];
+
+					        echo "<tr>";
+					        echo "<td>".$dataJOIN['nama_pembeli']."</td>";
+					        echo "<td>".$datamenu['nama']."</td>";
+
+				      
+					    }
 						    ?>
 						    </table>
 					</li>

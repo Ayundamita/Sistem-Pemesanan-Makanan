@@ -76,7 +76,7 @@ if (ISSET($_POST['submit'])) {
 					letter-spacing: 1px;
 					font-weight: bold;
 					text-align: center;
-				">UPDATE JADWAL</h1>
+				">UPDATE PESANAN</h1>
 				<ul style="
 					list-style: none;
 					font-family: serif;
@@ -95,7 +95,7 @@ if (ISSET($_POST['submit'])) {
 					            <tr> 
 					                <td width='30%'>Bayar</td>
 					                <td><select class="select" name="status" style="width: 100%">
-							 			<optgroup label="Judul Film">
+							 			<optgroup label="Konfirmasi">
 							 				<option value="Y">Y</option>
 							 				<option value="T">T</option>
 							 				<option value="K">K</option>

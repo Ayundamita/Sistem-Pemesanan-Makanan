@@ -76,9 +76,7 @@ ob_start();
 
 	if($datapembeli){
 		$idpembeli = $datapembeli['id_pembeli'];
-	}
-
-	$timestamp = date('Y-m-d');
+		$timestamp = date('Y-m-d');
 
 	$sql1 = "INSERT INTO pesanan VALUES('','$idpembeli','$idmenu','$totalpesanan', '$timestamp', 'T')";
 	$result1 = mysqli_query($connect, $sql1);
@@ -90,6 +88,9 @@ ob_start();
 			</script>
 		<?php
 	}
+	}
+
+	
 
  	}
  ob_end_flush();
@@ -132,7 +133,7 @@ ob_start();
 		            <tr> 
 		                <td>Menu</td>
 		                <td><select class="select" name="makanan" style="width: 85%">
-				 			<optgroup label="Judul Film">
+				 			<optgroup label="Pilih Makanan ">
 				 				<option value="ayamIngkung">Ayam Ingkung Utuh</option>
 				 				<option value="ayamOpor">Ayam Opor Utuh</option>
 				 				<option value="ayamBakar">Ayam Bakar Utuh</option>
