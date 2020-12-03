@@ -19,8 +19,7 @@ $query2 = "SELECT * FROM pembayaran ORDER BY id_pembayaran";
 $sql2 = mysqli_query($connect, $query2);
 
 
-$JOIN = "SELECT b.nama_pembeli, c.nama FROM `pesanan` AS a INNER JOIN pembeli AS b ON a.id_pembeli = b.id_pembeli INNER JOIN menu AS c ON a.id_menu = c.id_menu"; // ni join
-$sqlJOIN = mysqli_query($connect, $JOIN);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -159,28 +158,9 @@ $sqlJOIN = mysqli_query($connect, $JOIN);
 						    ?>
 						
 						    </table>
-					<h1 style="
-					font-size: 25px;
-					letter-spacing: 1px;
-					margin-top: 25px;
-					font-weight: bold;
-					text-align: center;
-				">Data JOIN</h1>
-						    <table width='100%' border="1">
-						    <tr>
-						        <th>Nama Pemesan</th> <th>Menu</th>
-						    </tr>
-						    <?php  
-						    while($dataJOIN = mysqli_fetch_array($sqlJOIN)) {
-					    	$idpembeli = $datapesanan['id_pembeli'];
+		
 
-					        echo "<tr>";
-					        echo "<td>".$dataJOIN['nama_pembeli']."</td>";
-					        echo "<td>".$datamenu['nama']."</td>";
-
-				      
-					    }
-						    ?>
+				    
 						    </table>
 					</li>
 				</ul>
