@@ -89,9 +89,6 @@ ob_start();
 		<?php
 	}
 	}
-
-	
-
  	}
  ob_end_flush();
 ?>
@@ -115,12 +112,11 @@ ob_start();
 	">
 		<section class="cont-form">
 			<form id="res" action="index.php" method="post" style="
-				background-color: rgba(255,255,255,0.7);
-				width: 60vh;
+				background-color: rgba(85, 239, 196,1.0);
+				width: 100vh;
 				padding: 30px;
 				margin-bottom: 20px;
 				margin-top: 20px;
-				margin-left: 10%;
 				border-radius: 10px;
 				top: 5vh;
 			">
@@ -129,6 +125,28 @@ ob_start();
 		            <tr> 
 		                <td>Username</td>
 		                <td><input type="text" style="width: 85%" name="username" placeholder="Nama Lengkap"></td>
+		                <td rowspan="3">				 
+		         <!-- Submit Button -->
+				 <input type="submit" name="submit" value="Pesan" style="
+					width: 49%;
+					margin-top: 15px;
+					border-radius: 10px;
+					">
+				 <input type="reset" name="reset" value="Reset" style="
+					width: 49%;
+					margin-top: 15px;
+					border-radius: 10px;
+					">
+				 <a href="pembeli.php"><button type="button" name="daftar" style="
+					width: 100%;
+					margin-top: 15px;
+					border-radius: 10px;
+					">Daftar Pembeli</button></a>
+				 <a href="auth.php"><button type="button" name="daftar" style="
+						width: 100%;
+						margin-top: 15px;
+						border-radius: 10px;
+						">Halaman Admin</button></a></td>
 		            </tr>
 		            <tr> 
 		                <td>Menu</td>
@@ -148,28 +166,6 @@ ob_start();
 		                <td><input type="text" style="width: 85%" name="totalpesanan" placeholder="Total Pesanan" "></td>
 		            </tr>
 		        </table>
-
-				 <!-- Submit Button -->
-				 <input type="submit" class="btn btn-primary" name="submit" value="Pesan" style="
-					width: 49%;
-					margin-top: 15px;
-					border-radius: 10px;
-					">
-				 <input type="reset" class="btn btn-primary" name="reset" value="Reset" style="
-					width: 49%;
-					margin-top: 15px;
-					border-radius: 10px;
-					">
-				 <a href="pembeli.php"><button type="button" class="btn btn-primary" name="daftar" style="
-					width: 100%;
-					margin-top: 15px;
-					border-radius: 10px;
-					">Daftar Pembeli</button></a>
-				 <a href="auth.php"><button type="button" class="btn btn-primary" name="daftar" style="
-						width: 100%;
-						margin-top: 15px;
-						border-radius: 10px;
-						">Halaman Admin</button></a>
 			</form>
 		</section>
 	</div></center>

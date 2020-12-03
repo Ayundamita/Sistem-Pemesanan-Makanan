@@ -8,12 +8,18 @@ $dataadmin = mysqli_fetch_array($sql1);
 
 $nama = $dataadmin['nama'];
 
+$q = "CREATE VIEW pesanan_view SELECT * FROM pesanan ORDER BY id_pesanan";
+$sqlPESAN = mysqli_query($connect, $q);
 $query = "SELECT * FROM pesanan ORDER BY id_pesanan";
 $sql = mysqli_query($connect, $query);
 
+$q2 = "CREATE VIEW pembayaran_view SELECT * FROM pembayaran ORDER BY id_pembayaran";
+$sqlPESANAN = $sqlPESAN = mysqli_query($connect, $q2);
 $query2 = "SELECT * FROM pembayaran ORDER BY id_pembayaran";
 $sql2 = mysqli_query($connect, $query2);
-$JOIN = "SELECT b.nama_pembeli, c.nama FROM `pesanan` AS a INNER JOIN pembeli AS b ON a.id_pembeli = b.id_pembeli INNER JOIN menu AS c ON a.id_menu = c.id_menu";
+
+
+$JOIN = "SELECT b.nama_pembeli, c.nama FROM `pesanan` AS a INNER JOIN pembeli AS b ON a.id_pembeli = b.id_pembeli INNER JOIN menu AS c ON a.id_menu = c.id_menu"; // ni join
 $sqlJOIN = mysqli_query($connect, $JOIN);
 ?>
 <!DOCTYPE html>
